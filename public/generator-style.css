@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Zen+Kaku+Gothic+Antique:wght@300;400;700&display=swap');
+
+body {
+    background-color: #924040;
+    height: 100vh;
+    display: flex;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
+main {
+    background-color: #fff;
+    width: 25vw;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    margin: auto;
+}
+
+h1 {
+    font-family: 'Bebas Neue', cursive, sans-serif;
+    text-align: center;
+    font-size: 2.5rem;
+    color:#924040;
+}
+
+.genders, .universes {
+    border: 1px black solid;
+    display: flex;
+    margin-top: 2rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.genders input, .universes input,
+.genders label, .universes label {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0.5rem;
+}
+
+input[type='radio']:checked:after {
+    width: 13px;
+    height: 13px;
+    border-radius: 15px;
+    background-color: #924040;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+}
+
+.button {
+    text-align: center;
+}
+
+#generator {
+    background-color: #924040;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    margin-top: 2rem;
+}
