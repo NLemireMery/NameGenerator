@@ -9,7 +9,7 @@
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="generator-style.css">
     <!-- Data script -->
-    <script src="../src/data.js"></script>
+    <script id= "data" src="../src/data/fantasy/data.js"></script>
     <!-- Application script -->
     <script src="../src/app.js"></script>
 </head>
@@ -29,6 +29,10 @@
                         <input type="radio" name="gender" id="female">
                         <label for="female">Female</label>
                     </li>
+                    <li>
+                        <input type="radio" name="gender" id="nonbinary">
+                        <label for="nonbinary">Non-binary</label>
+                    </li>
                 </ul>
             </fieldset>
             <fieldset class="universes">
@@ -47,13 +51,19 @@
                         <input type="radio" name="universe" id="contemporary">
                         <label for="contemporary">Contemporary</label>
                     </li>
+                    <li>
+                        <input type="radio" name="universe" id="historical">
+                        <label for="historical">Historical</label>
+                    </li>
                 </ul>
             </fieldset>
             <div class="button">
                 <button type="button" id="generator">Generate</button>
             </div>
         </form>
-        <p id="name"></p>
+        <p id="name">
+            <span id="error"></span>
+        </p>
     </main>
 </body>
 </html>

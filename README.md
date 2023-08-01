@@ -7,7 +7,7 @@ Randomly generates a full name (first and last) for the user according to a spec
 If you're writing a novel, if you're preparing a TTRPG game with some friends...  in short, if you just need a hand in choosing a character's name for whatever reason! :)
 
 ## Where does it go from here?
-- [ ] Design rework
-- [ ] Non-binary feature
+- [x] Design rework
+- [x] Non-binary feature
 - [ ] Different names for different settings (so far, thinking about sci-fi, fantasy, contemporary)
 - [ ] Choose names according to different regions of the world
