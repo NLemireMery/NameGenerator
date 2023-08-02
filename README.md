@@ -9,5 +9,6 @@ If you're writing a novel, if you're preparing a TTRPG game with some friends...
 ## Where does it go from here?
 - [x] Design rework
 - [x] Non-binary feature
-- [ ] Different names for different settings (so far, thinking about sci-fi, fantasy, contemporary)
+- [x] Different names for different settings (so far, thinking about sci-fi, fantasy, contemporary)
+- [x] Add names to the database depending on the settings
 - [ ] Choose names according to different regions of the world
