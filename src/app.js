@@ -10,39 +10,37 @@ const app = {
     },
 
     /**
-     * Generate a random male name (first and last) 
+     * Generate a random name (first and last) according to a specified setting and gender
      * @returns string
      */
-    generateMaleName: function() {
-        let firstName = Math.floor(Math.random() * maleNames.length);
-        let surname = Math.floor(Math.random() * surnames.length);
-        if (maleNames.length > 0 && surnames.length > 0) {
-            return maleNames[firstName] + ' ' + surnames[surname];
-        }
-    },
+    generateName: function(setting) {
+        const maleRadio = document.querySelector('#male');
+        const femaleRadio = document.querySelector('#female');
+        const nonBinaryRadio = document.querySelector('#nonbinary');
+        const randomName = document.querySelector('#name');
 
-    /**
-     * Generate a random female name (first and last) 
-     * @returns string
-     */
-    generateFemaleName: function() {
-        let firstName = Math.floor(Math.random() * femaleNames.length);
-        let surname = Math.floor(Math.random() * surnames.length);
-        if (femaleNames.length > 0 && surnames.length > 0) {
-            return femaleNames[firstName] + ' ' + surnames[surname];
-        }
-    },
-
-    /**
-     * Generate a random non-binary name (first and last) 
-     * @returns string
-     */
-    generateName: function() {
-        let names = femaleNames.concat(maleNames);
-        let firstName = Math.floor(Math.random() * names.length);
-        let surname = Math.floor(Math.random() * surnames.length);
-        if (names.length > 0 && surnames.length > 0) {
-            return names[firstName] + ' ' + surnames[surname];
+        if (maleRadio.checked) {
+            let firstName = Math.floor(Math.random() * setting["maleNames"].length);
+            let surname = Math.floor(Math.random() * setting["surnames"].length);
+            if (setting["maleNames"].length > 0 && setting["surnames"].length > 0) {
+                return setting["maleNames"][firstName] + ' ' + setting["surnames"][surname];
+            }
+        } else if (femaleRadio.checked) {
+            let firstName = Math.floor(Math.random() * setting["femaleNames"].length);
+            let surname = Math.floor(Math.random() * setting["surnames"].length);
+            if (setting["femaleNames"].length > 0 && setting["surnames"].length > 0) {
+                return setting["femaleNames"][firstName] + ' ' + setting["surnames"][surname];
+            }
+        } else if (nonBinaryRadio.checked) {
+            let names = setting["femaleNames"].concat(setting["maleNames"]);
+            let firstName = Math.floor(Math.random() * names.length);
+            let surname = Math.floor(Math.random() * setting["surnames"].length);
+            if (names.length > 0 && setting["surnames"].length > 0) {
+                return names[firstName] + ' ' + setting["surnames"][surname];
+            }
+        } else {
+            /* Error management */
+            return randomName.textContent = 'You need to select a gender.';
         }
     },
 
@@ -57,37 +55,19 @@ const app = {
         const scifiRadio = document.querySelector('#scifi');
         const contemporaryRadio = document.querySelector('#contemporary');
         const historicalRadio = document.querySelector('#historical');
-
-        // Execute the generating function depending on whether the setting is fantasy, scifi, contemporary or historical
-        if (fantasyRadio.checked) {
-            /* A faire */            
-        } else if (scifiRadio.checked) {
-            /* A faire */
-        } else if (contemporaryRadio.checked) {
-            /* A faire */
-        } else if (historicalRadio.checked) {
-            /* A faire */
-        } else {
-            /* Gestion meilleure de l'erreur à faire */
-            /* error.textContent += 'You need to select a setting.' */
-        }
-
-        const maleRadio = document.querySelector('#male');
-        const femaleRadio = document.querySelector('#female');
-        const nonBinaryRadio = document.querySelector('#nonbinary');
         const randomName = document.querySelector('#name');
-        const error = document.querySelector('#error');
 
-        // Execute the generating function depending on whether the name is male, female or non-binary
-        if (maleRadio.checked) {
-            randomName.textContent = app.generateMaleName();
-        } else if (femaleRadio.checked) {
-            randomName.textContent = app.generateFemaleName();
-        } else if (nonBinaryRadio.checked) {
-            randomName.textContent = app.generateName();
+        // Execute the generating name functions depending on whether the setting is fantasy, scifi, contemporary or historical
+        if (fantasyRadio.checked) {
+            randomName.textContent = app.generateName(fantasy);
+        } else if (scifiRadio.checked) {
+            randomName.textContent = app.generateName(scifi);
+        } else if (contemporaryRadio.checked) {
+            randomName.textContent = app.generateName(contemporary);
+        } else if (historicalRadio.checked) {
+            randomName.textContent = app.generateName(historical);
         } else {
-            /* Gestion meilleure de l'erreur à faire */
-            /* error.textContent += 'You need to select a gender. \r\n' */
+            randomName.textContent = "Pick a setting."
         }
         
     }

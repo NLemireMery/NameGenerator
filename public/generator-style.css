@@ -67,10 +67,3 @@ input[type='radio']:checked:after {
     font-weight: bold;
     text-align: center;
 }
-
-#error {
-    background-color: #fff;
-    color: #924040;
-    font-size: 1.15rem;
-    font-weight: normal;
-}

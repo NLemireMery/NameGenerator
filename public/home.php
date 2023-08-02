@@ -9,7 +9,7 @@
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="generator-style.css">
     <!-- Data script -->
-    <script id= "data" src="../src/data/fantasy/data.js"></script>
+    <script id= "data" src="../src/data.js"></script>
     <!-- Application script -->
     <script src="../src/app.js"></script>
 </head>
@@ -61,9 +61,7 @@
                 <button type="button" id="generator">Generate</button>
             </div>
         </form>
-        <p id="name">
-            <span id="error"></span>
-        </p>
+        <p id="name"></p>
     </main>
 </body>
 </html>
